@@ -167,6 +167,10 @@ button { font: inherit; }
   background: #08070b url("../assets/images/linternas3.png") center / cover no-repeat;
 }
 
+.page--gift {
+  background: #08070b url("../assets/images/linternas2.png") center / cover no-repeat;
+}
+
 .page--flower {
   background: #08070b url("../assets/images/linternas_flor.jpg") center 55% / auto 100% no-repeat;
 }
@@ -178,15 +182,7 @@ button { font: inherit; }
   height: auto;
   max-height: 91svh;
   object-fit: contain;
-  filter: drop-shadow(0 13px 27px rgba(0, 0, 0, .42));
-  -webkit-mask-image:
-    linear-gradient(to right, transparent, #000 1.5%, #000 98.5%, transparent),
-    linear-gradient(to bottom, transparent, #000 1.2%, #000 98.8%, transparent);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    linear-gradient(to right, transparent, #000 1.5%, #000 98.5%, transparent),
-    linear-gradient(to bottom, transparent, #000 1.2%, #000 98.8%, transparent);
-  mask-composite: intersect;
+  filter: none;
   pointer-events: none;
 }
 
@@ -205,6 +201,28 @@ button { font: inherit; }
 }
 
 .page-copy--welcome { gap: clamp(.3rem, .9svh, .6rem); }
+.page-copy--gift { gap: clamp(.35rem, .9svh, .65rem); }
+.page-copy--gift .script-heading { font-size: clamp(1.75rem, 6svh, 2.8rem); white-space: nowrap; }
+
+.gift-envelope {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  padding: 12px;
+  border: 1px solid rgba(180, 124, 36, .46);
+  border-radius: 50%;
+  color: var(--gold);
+  background: rgba(255, 249, 229, .24);
+}
+
+.gift-message {
+  max-width: 300px;
+  margin: 0;
+  color: #4e3d2d;
+  font: 500 clamp(1rem, 2.8svh, 1.3rem)/1.35 var(--serif);
+}
+
+.page-copy--gift .page-note { margin: .15rem 0 0; }
 
 .eyebrow {
   margin: 0;
@@ -412,8 +430,8 @@ h1 {
 }
 
 .page-arrow:hover { background: rgba(91, 54, 109, .95); transform: translate(-50%, -2px); }
-.page-arrow--up { top: max(1rem, env(safe-area-inset-top)); }
-.page-arrow--down { bottom: max(1rem, env(safe-area-inset-bottom)); }
+.page-arrow--up { top: max(3.25rem, calc(env(safe-area-inset-top) + 2rem)); }
+.page-arrow--down { bottom: max(3.25rem, calc(env(safe-area-inset-bottom) + 2rem)); }
 
 .page--flower::after { background: linear-gradient(180deg, rgba(10, 8, 13, .06), rgba(10, 8, 13, .4)); }
 
@@ -499,6 +517,8 @@ h1 {
 @media (orientation: landscape) and (max-height: 500px) {
   .page-copy { height: 74dvh; gap: .1rem; }
   .page-copy--welcome { gap: .1rem; }
+  .page-copy--gift { gap: .08rem; }
+  .page-copy--gift .page-note { margin: 0; }
   .eyebrow { font-size: .42rem; }
   .script-name { font-size: clamp(1.8rem, 8dvh, 2.5rem); }
   h1 { font-size: clamp(1.1rem, 4dvh, 1.4rem); }
