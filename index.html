@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17101f">
+  <meta name="description" content="Estás invitado a celebrar los XV años de Nathaly.">
+  <title>Los XV de Nathaly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main>
+    <section class="video-intro" id="video-intro" aria-label="Introducción de la invitación">
+      <video class="intro-video" id="intro-video" playsinline preload="auto" aria-label="Video de introducción de los XV años de Nathaly">
+        <source src="assets/video/intro_xv_nr.mp4" type="video/mp4">
+        Tu navegador no puede reproducir este video.
+      </video>
+      <button class="start-video" id="start-video" type="button" aria-label="Toca para abrir la invitación">
+        <span class="play-mark" aria-hidden="true">▶</span>
+        <span>Toca para abrir la invitación</span>
+      </button>
+      <p class="video-error" id="video-error" role="status" hidden>No se pudo reproducir el video. Intenta recargar la invitación.</p>
+    </section>
+
+    <section class="invitation" id="invitation" aria-label="Invitación a los XV años de Nathaly" hidden>
+      <section class="page page--welcome" id="pagina-1" aria-labelledby="invitation-title" tabindex="-1">
+        <img class="parchment" src="assets/images/pergamino_transparente.png" alt="" aria-hidden="true">
+        <article class="page-copy page-copy--welcome">
+          <p class="eyebrow">Con la bendición de Dios y de mis papás</p>
+          <p class="script-name">Nathaly</p>
+          <h1 id="invitation-title">Mis XV años</h1>
+          <p class="invitation-message">Tengo la alegría de invitarte a compartir una noche mágica y uno de los momentos más especiales de mi vida.</p>
+          <div class="parents">
+            <span>Carlos Reyes</span>
+            <span class="ampersand">&amp;</span>
+            <span>Johana Hinojosa</span>
+          </div>
+          <p class="page-date">14 de noviembre <span>2026</span></p>
+        </article>
+        <a class="page-arrow page-arrow--down" href="#pagina-2" aria-label="Ir a la fecha" title="Ir a la fecha"><span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="page page--date" id="pagina-2" aria-labelledby="date-title">
+        <img class="parchment" src="assets/images/pergamino_transparente.png" alt="" aria-hidden="true">
+        <article class="page-copy">
+          <p class="eyebrow">Una fecha para guardar en el corazón</p>
+          <h2 id="date-title" class="script-heading">¡Nos vemos pronto!</h2>
+          <p class="calendar-date">Sábado <strong>14</strong> de noviembre <span>2026</span></p>
+          <p class="countdown-intro">Faltan</p>
+          <div class="countdown" id="countdown" data-date="2026-11-14T00:00:00" aria-label="Cuenta regresiva para el 14 de noviembre">
+            <div class="countdown-unit"><span data-unit="days">--</span><small>días</small></div>
+            <div class="countdown-unit"><span data-unit="hours">--</span><small>horas</small></div>
+            <div class="countdown-unit"><span data-unit="minutes">--</span><small>minutos</small></div>
+            <div class="countdown-unit"><span data-unit="seconds">--</span><small>segundos</small></div>
+          </div>
+          <p class="page-note">Cada segundo nos acerca a una noche inolvidable.</p>
+        </article>
+        <a class="page-arrow page-arrow--up" href="#pagina-1" aria-label="Volver a la invitación" title="Volver a la invitación"><span aria-hidden="true">↑</span></a>
+        <a class="page-arrow page-arrow--down" href="#pagina-3" aria-label="Ver los detalles" title="Ver los detalles"><span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="page page--details" id="pagina-3" aria-labelledby="details-title">
+        <img class="parchment" src="assets/images/pergamino_transparente.png" alt="" aria-hidden="true">
+        <article class="page-copy">
+          <p class="eyebrow">Celebremos juntos esta noche</p>
+          <h2 id="details-title" class="script-heading">Detalles</h2>
+          <div class="details-list">
+            <div class="detail">
+              <span class="detail-label">Fecha</span>
+              <span class="detail-value">14 de noviembre de 2026</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Horario</span>
+              <span class="detail-value">Por confirmar</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Lugar</span>
+              <span class="detail-value">Por confirmar</span>
+            </div>
+            <div class="detail">
+              <span class="detail-label">Vestimenta</span>
+              <span class="detail-value">Formal</span>
+            </div>
+          </div>
+          <div class="page-actions">
+            <button class="action-button action-button--gold" id="location-button" type="button" aria-haspopup="dialog">Ver ubicación</button>
+            <a class="action-button action-button--blue" href="https://wa.me/593990812872?text=Hola%21%20Confirmo%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Nathaly%20%F0%9F%92%9C%F0%9F%92%9B" target="_blank" rel="noopener noreferrer">Confirmar asistencia</a>
+          </div>
+        </article>
+        <a class="page-arrow page-arrow--up" href="#pagina-2" aria-label="Volver a la fecha" title="Volver a la fecha"><span aria-hidden="true">↑</span></a>
+        <a class="page-arrow page-arrow--down" href="#pagina-4" aria-label="Ver la flor de la vida" title="Ver la flor de la vida"><span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="page page--flower" id="pagina-4" aria-label="Una nueva etapa">
+        <button class="flower-return" type="button" aria-label="La flor de la vida: volver al inicio de la invitación">
+          <span class="flower-hint">Una nueva etapa comienza · toca la flor para volver</span>
+        </button>
+        <a class="page-arrow page-arrow--up" href="#pagina-3" aria-label="Volver a los detalles" title="Volver a los detalles"><span aria-hidden="true">↑</span></a>
+      </section>
+
+    </section>
+
+    <dialog class="map-dialog" id="map-dialog" aria-labelledby="map-title">
+      <div class="map-dialog__header">
+        <h2 id="map-title">Ubicación de la celebración</h2>
+        <button class="map-dialog__close" id="map-close" type="button" aria-label="Cerrar mapa">×</button>
+      </div>
+      <iframe
+        class="map-frame"
+        title="Mapa de la ubicación de la celebración"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d249.36230764314791!2d-78.4941443822529!3d-0.18764992340353748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1791426570985!5m2!1ses!2sec"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </dialog>
+
+    <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Silenciar música" aria-pressed="true" hidden>
+      <svg class="sound-icon" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M5 12v8h6l8 6V6l-8 6H5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path class="sound-wave" d="M23 11a7 7 0 0 1 0 10m3-14a12 12 0 0 1 0 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path class="sound-muted" d="m22 12 7 8m0-8-7 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <p class="sound-status" id="sound-status" role="status" aria-live="polite"></p>
+    <audio id="soundtrack" src="assets/audio/veo-en-ti-la-luz.mp3" preload="auto" loop></audio>
+  </main>
+  <script src="js/invitation.js" defer></script>
+</body>
+</html>
