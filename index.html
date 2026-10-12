@@ -49,9 +49,9 @@
         <article class="page-copy">
           <p class="eyebrow">Una fecha para guardar en el corazón</p>
           <h2 id="date-title" class="script-heading">¡Nos vemos pronto!</h2>
-          <p class="calendar-date">Sábado <strong>14</strong> de noviembre <span>2026</span></p>
+          <p class="calendar-date">Sábado <strong>14</strong> de noviembre <strong class="calendar-time">19h00</strong> <span>2026</span></p>
           <p class="countdown-intro">Faltan</p>
-          <div class="countdown" id="countdown" data-date="2026-11-14T00:00:00" aria-label="Cuenta regresiva para el 14 de noviembre">
+          <div class="countdown" id="countdown" data-date="2026-11-14T19:00:00" aria-label="Cuenta regresiva para el 14 de noviembre a las 19h00">
             <div class="countdown-unit"><span data-unit="days">--</span><small>días</small></div>
             <div class="countdown-unit"><span data-unit="hours">--</span><small>horas</small></div>
             <div class="countdown-unit"><span data-unit="minutes">--</span><small>minutos</small></div>
@@ -75,11 +75,11 @@
             </div>
             <div class="detail">
               <span class="detail-label">Horario</span>
-              <span class="detail-value">Por confirmar</span>
+              <span class="detail-value">19h00</span>
             </div>
             <div class="detail">
               <span class="detail-label">Lugar</span>
-              <span class="detail-value">Por confirmar</span>
+              <span class="detail-value">Av. Mariana de Jesús 1735</span>
             </div>
             <div class="detail">
               <span class="detail-label">Vestimenta</span>
@@ -87,15 +87,53 @@
             </div>
           </div>
           <div class="page-actions">
-            <button class="action-button action-button--gold" id="location-button" type="button" aria-haspopup="dialog">Ver ubicación</button>
+            <a class="action-button action-button--gold" href="https://maps.app.goo.gl/VAm6pCsbqCqWcHtB7" target="_blank" rel="noopener noreferrer">Ver ubicación</a>
             <a class="action-button action-button--blue" href="https://wa.me/593990812872?text=Hola%21%20Confirmo%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Nathaly%20%F0%9F%92%9C%F0%9F%92%9B" target="_blank" rel="noopener noreferrer">Confirmar asistencia</a>
           </div>
         </article>
         <a class="page-arrow page-arrow--up" href="#pagina-2" aria-label="Volver a la fecha" title="Volver a la fecha"><span aria-hidden="true">↑</span></a>
-        <a class="page-arrow page-arrow--down" href="#pagina-4" aria-label="Ver el detalle del sobre cerrado" title="Ver el detalle del sobre cerrado"><span aria-hidden="true">↓</span></a>
+        <a class="page-arrow page-arrow--down" href="#pagina-4" aria-label="Ver el código de vestimenta" title="Ver el código de vestimenta"><span aria-hidden="true">↓</span></a>
       </section>
 
-      <section class="page page--gift" id="pagina-4" aria-labelledby="gift-title">
+      <section class="page page--dresscode" id="pagina-4" aria-labelledby="dresscode-title">
+        <img class="parchment" src="assets/images/pergamino_suave.png" alt="" aria-hidden="true">
+        <article class="dresscode-content">
+          <div class="dresscode-heading">
+            <p class="dresscode-kicker">Código de vestimenta</p>
+            <h2 id="dresscode-title" class="dresscode-formal">Formal</h2>
+            <span class="dresscode-ornament" aria-hidden="true">◆</span>
+          </div>
+          <div class="dresscode-section dresscode-section--women">
+            <img class="dresscode-silhouette dresscode-silhouette--woman" src="assets/images/silueta_mujer_dresscode.png" alt="Silueta de mujer con vestido largo">
+            <div class="dresscode-description">
+              <h3>— Mujeres —</h3>
+              <p class="dresscode-caption">Colores reservados</p>
+              <div class="dresscode-colors" aria-label="Colores reservados: lila y beige">
+                <div class="dresscode-color">
+                  <span class="dresscode-swatch dresscode-swatch--lilac" aria-hidden="true"></span>
+                  <span>Lila</span>
+                </div>
+                <div class="dresscode-color">
+                  <span class="dresscode-swatch dresscode-swatch--beige" aria-hidden="true"></span>
+                  <span>Beige</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dresscode-divider" aria-hidden="true"><span>◆</span></div>
+          <div class="dresscode-section dresscode-section--men">
+            <img class="dresscode-silhouette dresscode-silhouette--man" src="assets/images/silueta_hombre_dresscode.png" alt="Silueta de hombre con traje formal">
+            <div class="dresscode-description">
+              <h3>— Hombres —</h3>
+              <p class="dresscode-caption">A elección</p>
+            </div>
+          </div>
+        </article>
+        <a class="page-arrow page-arrow--up" href="#pagina-3" aria-label="Volver a los detalles" title="Volver a los detalles"><span aria-hidden="true">↑</span></a>
+        <a class="page-arrow page-arrow--down" href="#pagina-5" aria-label="Ver el detalle del sobre cerrado" title="Ver el detalle del sobre cerrado"><span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section class="page page--gift" id="pagina-5" aria-labelledby="gift-title">
         <img class="parchment" src="assets/images/pergamino_suave.png" alt="" aria-hidden="true">
         <article class="page-copy page-copy--gift">
           <p class="eyebrow">Un detalle para mí</p>
@@ -109,32 +147,17 @@
           <p class="page-note">Gracias por compartir conmigo este momento.</p>
         </article>
         <a class="page-arrow page-arrow--up" href="#pagina-3" aria-label="Volver a los detalles" title="Volver a los detalles"><span aria-hidden="true">↑</span></a>
-        <a class="page-arrow page-arrow--down" href="#pagina-5" aria-label="Ver la flor de la vida" title="Ver la flor de la vida"><span aria-hidden="true">↓</span></a>
+        <a class="page-arrow page-arrow--down" href="#pagina-6" aria-label="Ver la flor de la vida" title="Ver la flor de la vida"><span aria-hidden="true">↓</span></a>
       </section>
 
-      <section class="page page--flower" id="pagina-5" aria-label="Una nueva etapa">
+      <section class="page page--flower" id="pagina-6" aria-label="Una nueva etapa">
         <button class="flower-return" type="button" aria-label="La flor de la vida: volver al inicio de la invitación">
           <span class="flower-hint">Una nueva etapa comienza · toca la flor para volver</span>
         </button>
-        <a class="page-arrow page-arrow--up" href="#pagina-4" aria-label="Volver al detalle del sobre cerrado" title="Volver al detalle del sobre cerrado"><span aria-hidden="true">↑</span></a>
+        <a class="page-arrow page-arrow--up" href="#pagina-5" aria-label="Volver al detalle del sobre cerrado" title="Volver al detalle del sobre cerrado"><span aria-hidden="true">↑</span></a>
       </section>
 
     </section>
-
-    <dialog class="map-dialog" id="map-dialog" aria-labelledby="map-title">
-      <div class="map-dialog__header">
-        <h2 id="map-title">Ubicación de la celebración</h2>
-        <button class="map-dialog__close" id="map-close" type="button" aria-label="Cerrar mapa">×</button>
-      </div>
-      <iframe
-        class="map-frame"
-        title="Mapa de la ubicación de la celebración"
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d249.36230764314791!2d-78.4941443822529!3d-0.18764992340353748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sec!4v1791426570985!5m2!1ses!2sec"
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </dialog>
 
     <button class="sound-toggle" id="sound-toggle" type="button" aria-label="Silenciar música" aria-pressed="true" hidden>
       <svg class="sound-icon" viewBox="0 0 32 32" aria-hidden="true">

@@ -8,9 +8,6 @@ const soundToggle = document.querySelector("#sound-toggle");
 const soundStatus = document.querySelector("#sound-status");
 const countdown = document.querySelector("#countdown");
 const flowerReturn = document.querySelector(".flower-return");
-const locationButton = document.querySelector("#location-button");
-const mapDialog = document.querySelector("#map-dialog");
-const mapClose = document.querySelector("#map-close");
 const fadeDuration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 640;
 let pageTransitionInProgress = false;
 
@@ -166,10 +163,4 @@ flowerReturn.addEventListener("click", () => {
   if (transitionToPage(document.querySelector("#pagina-1"))) {
     history.pushState(null, "", "#pagina-1");
   }
-});
-
-locationButton.addEventListener("click", () => mapDialog.showModal());
-mapClose.addEventListener("click", () => mapDialog.close());
-mapDialog.addEventListener("click", (event) => {
-  if (event.target === mapDialog) mapDialog.close();
 });
