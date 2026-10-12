@@ -361,6 +361,11 @@ h1 {
 
 .dresscode-silhouette--man { max-width: 72%; }
 
+.dresscode-section--men .dresscode-silhouette,
+.dresscode-section--men .dresscode-description {
+  translate: 0 -4px;
+}
+
 .dresscode-description {
   display: flex;
   width: 100%;
@@ -431,7 +436,9 @@ h1 {
 
 @media (max-height: 700px) {
   .dresscode-content { height: 57dvh; grid-template-rows: 35% 31% 4% 30%; translate: 0; }
-  .dresscode-silhouette { height: 17dvh; }
+  .dresscode-section--men .dresscode-silhouette,
+  .dresscode-section--men .dresscode-description { translate: 0 -2px; }
+  .dresscode-silhouette { height: 16dvh; }
   .dresscode-swatch { width: clamp(29px, 6dvh, 40px); }
 }
 
@@ -610,7 +617,9 @@ h1 {
   .dresscode-description h3 { font-size: clamp(.72rem, 2.8dvh, 1rem); }
   .dresscode-caption { font-size: clamp(.5rem, 1.55dvh, .68rem); }
   .dresscode-swatch { width: clamp(29px, 6dvh, 40px); }
-  .dresscode-silhouette { height: 15.5dvh; }
+  .dresscode-section--men .dresscode-silhouette,
+  .dresscode-section--men .dresscode-description { translate: 0 -2px; }
+  .dresscode-silhouette { height: 14.5dvh; }
   .details-list { gap: .35rem; margin: .2rem 0; }
   .page-actions { gap: .25rem; margin-top: .15rem; }
   .action-button { min-height: 36px; }
