@@ -7,9 +7,102 @@ const soundtrack = document.querySelector("#soundtrack");
 const soundToggle = document.querySelector("#sound-toggle");
 const soundStatus = document.querySelector("#sound-status");
 const countdown = document.querySelector("#countdown");
+const celebrationCanvas = document.querySelector("#celebration");
 const flowerReturn = document.querySelector(".flower-return");
 const fadeDuration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 640;
 let pageTransitionInProgress = false;
+let celebrationPending = false;
+let celebrationStarted = false;
+
+function startCelebration() {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const context = celebrationCanvas.getContext("2d");
+  if (!context) {
+    console.error("No se pudo iniciar la animación de fuegos artificiales.");
+    return;
+  }
+
+  const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+  const particles = [];
+  const colors = ["#f8dc9b", "#d9a7e8", "#fff3d4", "#e7b85c"];
+  const bursts = [
+    { delay: 0, x: 0.2, y: 0.33 },
+    { delay: 180, x: 0.5, y: 0.22 },
+    { delay: 380, x: 0.8, y: 0.35 }
+  ];
+  let width = 0;
+  let height = 0;
+
+  function resizeCanvas() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    celebrationCanvas.width = width * pixelRatio;
+    celebrationCanvas.height = height * pixelRatio;
+    context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+  }
+
+  for (const burst of bursts) {
+    for (let index = 0; index < 48; index += 1) {
+      const angle = (Math.PI * 2 * index) / 48 + Math.random() * 0.08;
+      const speed = 75 + Math.random() * 125;
+      particles.push({
+        delay: burst.delay,
+        x: window.innerWidth * burst.x,
+        y: window.innerHeight * burst.y,
+        velocityX: Math.cos(angle) * speed,
+        velocityY: Math.sin(angle) * speed,
+        lifetime: 1200 + Math.random() * 800,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        radius: 1.2 + Math.random() * 1.5
+      });
+    }
+  }
+
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
+  celebrationCanvas.hidden = false;
+  const startedAt = performance.now();
+
+  function drawFrame(now) {
+    const elapsed = now - startedAt;
+    context.clearRect(0, 0, width, height);
+
+    for (const particle of particles) {
+      const age = elapsed - particle.delay;
+      if (age < 0 || age >= particle.lifetime) continue;
+
+      const seconds = age / 1000;
+      context.globalAlpha = 1 - age / particle.lifetime;
+      context.fillStyle = particle.color;
+      context.shadowColor = particle.color;
+      context.shadowBlur = 10;
+      context.beginPath();
+      context.arc(
+        particle.x + particle.velocityX * seconds,
+        particle.y + particle.velocityY * seconds + 45 * seconds ** 2,
+        particle.radius,
+        0,
+        Math.PI * 2
+      );
+      context.fill();
+    }
+
+    context.globalAlpha = 1;
+    context.shadowBlur = 0;
+
+    if (elapsed < 2600) {
+      requestAnimationFrame(drawFrame);
+      return;
+    }
+
+    context.clearRect(0, 0, width, height);
+    celebrationCanvas.hidden = true;
+    window.removeEventListener("resize", resizeCanvas);
+  }
+
+  requestAnimationFrame(drawFrame);
+}
 
 function updateCountdown() {
   const target = new Date(countdown.dataset.date).getTime();
@@ -26,7 +119,17 @@ function updateCountdown() {
     countdown.querySelector(`[data-unit="${unit}"]`).textContent = String(value).padStart(2, "0");
   }
 
-  if (remaining === 0) countdown.setAttribute("aria-label", "Hoy celebramos los XV años de Nathaly");
+  if (remaining === 0) {
+    countdown.setAttribute("aria-label", "Hoy celebramos los XV años de Nathaly");
+    if (!celebrationStarted) {
+      celebrationStarted = true;
+      celebrationPending = true;
+      if (!invitation.hidden) {
+        celebrationPending = false;
+        startCelebration();
+      }
+    }
+  }
 }
 
 function showSoundError(error) {
@@ -68,6 +171,10 @@ async function startVideo() {
 function showInvitation() {
   intro.classList.add("is-fading");
   invitation.hidden = false;
+  if (celebrationPending) {
+    celebrationPending = false;
+    startCelebration();
+  }
   invitation.classList.add("is-entering");
   invitation.scrollTop = 0;
   requestAnimationFrame(() => {
